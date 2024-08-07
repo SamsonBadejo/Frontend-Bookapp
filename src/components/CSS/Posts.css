@@ -1,0 +1,11 @@
+/* .posts_container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+}
+
+.post{
+    background: var(--color-background-dark) ;
+    color:  var(--color-background-light);
+    padding: 1rem;
+} */
