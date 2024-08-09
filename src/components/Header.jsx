@@ -101,7 +101,7 @@ const Header = () => {
         <motion.div
           initial={{ height: 0 }}
           animate={{ height: "auto" }}
-          className="md:hidden bg-indigo-600 dark:bg-gray-800 shadow-lg"
+          className="md:hidden bg-brown-900 dark:bg-black shadow-lg"
         >
           <ul className="flex flex-col items-center space-y-4 py-4">
             <Link

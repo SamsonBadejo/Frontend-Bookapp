@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import axios from "axios";
 import Loader from "../components/Loader";
-import { FaUser, FaFileAlt } from "react-icons/fa";
+import { FaUser, FaFileAlt, FaEnvelope } from "react-icons/fa";
 
 const Authors = () => {
   const [authors, setAuthors] = useState([]);
@@ -35,7 +35,7 @@ const Authors = () => {
       <section className="container mx-auto px-4 py-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {authors.length > 0 ? (
-            authors.map(({ _id: id, avatar, name, posts }) => (
+            authors.map(({ _id: id, avatar, name, email, posts }) => (
               <Link
                 to={`/posts/users/${id}`}
                 key={id}
@@ -47,7 +47,7 @@ const Authors = () => {
                 >
                   <div className="relative">
                     <motion.img
-                      src={`${ process.env.REACT_APP_ASSETS_URL}/uploads/${avatar}`}
+                      src={`${process.env.REACT_APP_ASSETS_URL}/uploads/${avatar}`}
                       alt={`${name} Avatar`}
                       className="w-16 h-16 rounded-full object-cover border-2 border-blue-500"
                       initial={{ opacity: 0, rotate: -180 }}
@@ -62,6 +62,9 @@ const Authors = () => {
                     <h3 className="text-xl font-bold text-black dark:text-orange-500">
                       {name}
                     </h3>
+                    <p className="text-gray-800 dark:text-gray-400 flex items-center">
+                      <FaEnvelope className="mr-2" /> {email}
+                    </p>
                     <p className="text-gray-800 dark:text-gray-400 flex items-center">
                       <FaFileAlt className="mr-2" /> {posts} Posts
                     </p>
